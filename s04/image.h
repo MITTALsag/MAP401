@@ -46,7 +46,7 @@ UINT hauteur_image(Image I);
    s'il y a une erreur dans le fichier le programme s'arrete en affichant
    un message 
    version acceptant les fichiers avec 
-   - ligne 1 : P1
+   - ligne 1 : P1\n
    - zero, une ou plusieurs lignes commencant toutes par #
    - zero, un ou plusieurs separateurs
    - la largeur

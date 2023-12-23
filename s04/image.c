@@ -75,6 +75,25 @@ UINT hauteur_image(Image I)
 	return I.la_hauteur_de_l_image;
 }
 
+/* fonction qui verifie si il y a au moins un seperateur (' ' ou '\n')
+	-renvoie 0 si il y a aucun separateur
+	-renvoie 1 si il y en a au moins un
+	*/
+int verif_sep(FILE* f){
+	char sep;
+	sep = fgetc(f);
+	if (sep != ' ' && sep != '\n'){
+		return 0;
+	}
+	do
+	{
+		sep = fgetc(f);
+	}while(sep == ' ' || sep =='\n');
+	
+	fseek(f, -1, SEEK_CUR);
+	return 1;
+
+}
 
 /* lire l'image dans le fichier nomme nom_f
    s'il y a une erreur dans le fichier le programme s'arrete en affichant
@@ -92,7 +111,7 @@ UINT hauteur_image(Image I)
 
 /* teste si le fichier d'identificateur f debute par un en-tete
    valide pour un fichier PBM :
-   - ligne 1 : P1
+   - ligne 1 : P1\n
    - suivie de zero, une ou plusieurs lignes commen�ant toutes par #
    La fonction se termine correctement si le fichier est correct, 
    et le pointeur de fichier se trouve � la suite de l'entete.
@@ -123,7 +142,8 @@ void entete_fichier_pbm(FILE *f)
 	{
 		ERREUR_FATALE("entete_fichier_pbm : ligne 1 incorrecte\n");
 	}
-	if ((ligne[0] != 'P') || (ligne[1] != '1'))
+	//si ligne != {'P','1',13, 10} && ligne !=  {'P','1',10} (où 10 = '\n')
+	if (!((ligne[0] == 'P' && ligne[1] == '1' && ligne[2] == 13 && ligne[3] == 10) || (ligne[0] == 'P' && ligne[1] == '1' && ligne[2] == 10)))
 	{
 		ERREUR_FATALE("entete_fichier_pbm : ligne 1 incorrecte\n");
 	}
@@ -168,7 +188,10 @@ Image lire_fichier_image(char *nom_f)
 	FILE *f;
 	UINT L,H;
 	UINT x,y;
+	int sep;
 	int res_fscanf;
+	char c;
+	int res;
 	Image I;
 	
 	/* ouverture du fichier nom_f en lecture */
@@ -183,15 +206,27 @@ Image lire_fichier_image(char *nom_f)
 	
 	/* lecture des dimensions */
 	res_fscanf = fscanf(f, "%d", &L);
-	if (res_fscanf != 1)
-	{
+	if (res_fscanf != 1){
 		ERREUR_FATALE("lire_fichier_image : dimension L incorrecte\n");
 	}
+	//verification qu'il y a au moins un separateur 
+	sep = verif_sep(f);
+	if (sep == 0){
+		ERREUR_FATALE("lire_fichier_image : il faut un séparateur entre les deux entiers de dimensions\n");
+	}
+
 	res_fscanf = fscanf(f, "%d", &H);
 	if (res_fscanf != 1)
 	{
 		ERREUR_FATALE("lire_fichier_image : dimension H incorrecte\n");
 	}
+	
+	//verification qu'il y a au moins un separateur 
+	sep = verif_sep(f);
+	if (sep == 0){
+		ERREUR_FATALE("lire_fichier_image : il faut un séparateur après la deuxième dimension\n");
+	}
+
 	
 	/* creation de l'image de dimensions L x H */
 	I = creer_image(L,H);
@@ -202,8 +237,6 @@ Image lire_fichier_image(char *nom_f)
 	x = 1; y = 1;
 	while (!feof(f) && y<=H)
 	{
-		char c;
-		int res;
 		
 		/* lire un caractere en passant les caracteres differents de '0' et '1' */
 		res = fscanf(f, "%c", &c);
@@ -222,6 +255,19 @@ Image lire_fichier_image(char *nom_f)
 		}
 	}   
 	
+	if (y < H){
+		ERREUR_FATALE("Il n'y a pas assez de pixel a remplir (peut-être un souci dans la séparation des dimension)\n");
+	}
+
+	// sep = verif_sep(f);
+
+	// sep = fgetc(f);
+	// if (sep == ' ' || sep == '\n')
+	// 	sep = fgetc(f);
+
+	// if (sep && y>H){
+	// 	ERREUR_FATALE("Il y a trop de Pixel dans le fichier\n")
+	// }
 	/* fermeture du fichier */
 	fclose(f);
 	
