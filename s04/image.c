@@ -75,10 +75,12 @@ UINT hauteur_image(Image I)
 	return I.la_hauteur_de_l_image;
 }
 
+
 /* fonction qui verifie si il y a au moins un seperateur (' ' ou '\n')
 	-renvoie 0 si il y a aucun separateur
 	-renvoie 1 si il y en a au moins un
 	*/
+//REF 5
 int verif_sep(FILE* f){
 	char sep;
 	sep = fgetc(f);
@@ -142,7 +144,7 @@ void entete_fichier_pbm(FILE *f)
 	{
 		ERREUR_FATALE("entete_fichier_pbm : ligne 1 incorrecte\n");
 	}
-	//si ligne != {'P','1',13, 10} && ligne !=  {'P','1',10} (où 10 = '\n')
+	//REF 3
 	if (!((ligne[0] == 'P' && ligne[1] == '1' && ligne[2] == 13 && ligne[3] == 10) || (ligne[0] == 'P' && ligne[1] == '1' && ligne[2] == 10)))
 	{
 		ERREUR_FATALE("entete_fichier_pbm : ligne 1 incorrecte\n");
@@ -254,11 +256,12 @@ Image lire_fichier_image(char *nom_f)
 			}
 		}
 	}   
-	
+	//REF 5
 	if (y < H){
 		ERREUR_FATALE("Il n'y a pas assez de pixel a remplir (peut-être un souci dans la séparation des dimension)\n");
 	}
 
+	//REF 6
 	do
 	{
 		sep = fgetc(f);
