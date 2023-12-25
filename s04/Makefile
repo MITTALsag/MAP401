@@ -37,7 +37,7 @@ INCLUDEOPTS = -I$(INCDIR)
 COMPILOPTS = -g -Wall $(INCLUDEOPTS)
 
 # liste des executables
-EXECUTABLES = test_image test_lecture_fichier
+EXECUTABLES = test_image test_lecture_fichier test_image_seul
 
 
 #############################################################################
@@ -80,7 +80,14 @@ test_image.o : test_image.c image.h
 test_lecture_fichier.o : test_lecture_fichier.c image.h 
 	@echo ""
 	@echo "---------------------------------------------"
-	@echo "Compilation du module test_image"
+	@echo "Compilation du module test_lecture_fichier"
+	@echo "---------------------------------------------"
+	$(CC) -c $(COMPILOPTS) $<
+
+test_image_seul.o : test_image_seul.c image.h 
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Compilation du module test_image_seul"
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
 		
@@ -96,6 +103,13 @@ test_image : test_image.o image.o
 	$(CC) $^ $(LDOPTS) -o $@
 
 test_lecture_fichier : test_lecture_fichier.o image.o 
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Creation de l'executable "$@
+	@echo "---------------------------------------------"
+	$(CC) $^ $(LDOPTS) -o $@
+
+test_image_seul : test_image_seul.o image.o 
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Creation de l'executable "$@

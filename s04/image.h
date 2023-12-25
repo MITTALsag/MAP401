@@ -57,6 +57,9 @@ UINT hauteur_image(Image I);
    */
 Image lire_fichier_image(char *nom_f);
 
+/*ecrit dans un fichier f l'image I sous format .pbm*/
+void ecrire_fichier_image(Image I, char *nom_fx);
+
 /* ecrire l'image I a l'ecran */
 void ecrire_image(Image I);
 

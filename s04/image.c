@@ -276,6 +276,49 @@ Image lire_fichier_image(char *nom_f)
 	return I;
 }
 
+//REF 8
+/*ecrit dans un fichier f l'image I sous format .pbm*/
+void ecrire_fichier_image(Image I, char *nom_f){
+
+	/* ouverture du fichier nom_f en lecture */
+	FILE* f = fopen(nom_f, "w");
+	if (f == (FILE *)NULL)
+	{
+		ERREUR_FATALE("ecrire_fichier_image : ouverture du fichier impossible\n");
+	}
+
+	UINT x, y;
+
+	UINT L = largeur_image(I);
+	UINT H = hauteur_image(I);
+	
+	fprintf(f, "P1\n %d %d\n", L, H);
+
+	x = 1; y = 1;
+
+	while (y <= H){
+
+		//si le pixel est blanc on affiche 0 et sinon on affiche 1
+		if (get_pixel_image(I , x, y) == BLANC)
+			fprintf(f, "0");
+		else 
+			fprintf(f, "1");
+
+		x++;
+
+		//si on arrvie a la fin de la ligne on reviens a la ligne et on reinitialise les valeurs x et y
+		if (x > L){
+			x = 1; y++;
+		}
+
+	}
+
+	/* fermeture du fichier */
+	fclose(f);
+
+}
+
+
 /* ecrire l'image I a l'ecran 
 	- affiche '.' si Pixel est blanc
 	- affiche '#' si Pixel est noir
@@ -284,8 +327,8 @@ void ecrire_image(Image I)
 {
 	UINT x, y;
 
-	UINT L = I.la_largeur_de_l_image;
-	UINT H = I.la_hauteur_de_l_image;
+	UINT L = largeur_image(I);
+	UINT H = hauteur_image(I);
 
 	// affichage à l'écran de la largeur et de la hauteur
 	printf("Largeur de l'image : %d\n", L);	
@@ -322,31 +365,22 @@ Image negatif_image(Image I)
 	UINT x, y;
 	Image neg_I;
 
-	UINT L = I.la_largeur_de_l_image;
-	UINT H = I.la_hauteur_de_l_image;
+	UINT L = largeur_image(I);
+	UINT H = hauteur_image(I);
 
 	//mettre les valeurs de la longueur et de la hauteur dans neg_I
-	neg_I.la_hauteur_de_l_image = H;
-	neg_I.la_largeur_de_l_image = L;
-
-	/* allocation dynamique d'un tableau de L*H Pixel*/
-	neg_I.pointeur_vers_le_tableau_de_pixels = (Pixel *)malloc(sizeof(Pixel)*L*H);
-	
-	/* test si le tableau a ete correctement alloue */
-	if (neg_I.pointeur_vers_le_tableau_de_pixels == (Pixel *)NULL)
-	{
-		ERREUR_FATALE("Impossible de creer le négatif de  l'image");
-	}
+	neg_I = creer_image(L, H);
 	
 	/* remplir le tableau avec des pixels négatif de l'image I */
 	x = 1; y = 1;
 
 	while (y <= H){
 
+		/*mettre les pixel a l'inverse de I (si get_pixel_image(I, x, y) == Noir 
+		 - alors on ne fait rein car le pixel(neg_I, x, y) = blanc de base (creation de l'image) )
+			*/
 		if (get_pixel_image(I, x, y) == BLANC)
-			set_pixel_image(I, x, y, NOIR);
-		else 
-			set_pixel_image(I, x, y, BLANC);
+			set_pixel_image(neg_I, x, y, NOIR);
 
 		x++;
 
