@@ -323,6 +323,7 @@ void ecrire_fichier_image(Image I, char *nom_f){
 	- affiche '.' si Pixel est blanc
 	- affiche '#' si Pixel est noir
 */
+//REF 2
 void ecrire_image(Image I)
 {
 	UINT x, y;
@@ -360,6 +361,7 @@ void ecrire_image(Image I)
 /* calculer l'image "negatif" de l'image I */
 /* l'image I n'est pas modifiee et */
 /* la fonction renvoie l'image "negatif" de I */
+//REF 2
 Image negatif_image(Image I)
 {
 	UINT x, y;
