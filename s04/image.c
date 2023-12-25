@@ -259,15 +259,14 @@ Image lire_fichier_image(char *nom_f)
 		ERREUR_FATALE("Il n'y a pas assez de pixel a remplir (peut-être un souci dans la séparation des dimension)\n");
 	}
 
-	// sep = verif_sep(f);
+	do
+	{
+		sep = fgetc(f);
+		if (sep != ' ' && sep != '\n' && sep != EOF)
+			ERREUR_FATALE("Il y a trop de Pixel dans le fichier\n");
 
-	// sep = fgetc(f);
-	// if (sep == ' ' || sep == '\n')
-	// 	sep = fgetc(f);
+	}while(sep != EOF);
 
-	// if (sep && y>H){
-	// 	ERREUR_FATALE("Il y a trop de Pixel dans le fichier\n")
-	// }
 	/* fermeture du fichier */
 	fclose(f);
 	
