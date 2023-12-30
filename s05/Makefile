@@ -37,7 +37,7 @@ INCLUDEOPTS = -I$(INCDIR)
 COMPILOPTS = -g -Wall $(INCLUDEOPTS)
 
 # liste des executables
-EXECUTABLES = test_geom2d
+EXECUTABLES = test_alea_geom2d
 
 
 #############################################################################
@@ -70,17 +70,17 @@ geom2d.o : geom2d.c geom2d.h types_macros.h
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
 
-test_geom2d.o : test_geom2d.c geom2d.h 
+test_alea_geom2d.o : test_alea_geom2d.c geom2d.h 
 	@echo ""
 	@echo "---------------------------------------------"
-	@echo "Compilation du module test_geom2d"
+	@echo "Compilation du module test_alea_geom2d"
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
 		
 ########################################################
 # regles explicites de creation des executables
 
-test_geom2d : test_geom2d.o geom2d.o 
+test_alea_geom2d : test_alea_geom2d.o geom2d.o 
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Creation de l'executable "$@
