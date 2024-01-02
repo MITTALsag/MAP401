@@ -79,7 +79,7 @@ int lire_fichier_PointVect(char* nom_fich, char* nom_fonction, coordonnee* x1, c
         res_lire = lire_coor(fich, x1, y1, "premier argument.", nom_fich);
         //Vérification de la justesse du premier argument
         if (res_lire == 0)
-            //lecteure du deuxième argument
+		//lecteure du deuxième argument
             res_lire = lire_double(fich, lambda, "deuxième argument.", nom_fich);
     }
     else {

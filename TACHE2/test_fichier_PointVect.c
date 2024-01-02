@@ -14,10 +14,14 @@ int main(int argc, char* argv[]){
         printf("-------------------------------------------------------------------------------------------------------\n");
         result = lire_fichier_PointVect(argv[i], nom_fonction, &x1, &y1, &x2, &y2, &lambda, &x_res, &y_res, &res);
         
+	/*si le fichier est bien dans le bon format :
+		- on affiche les valeurs du fichier
+		- et on lance les tests sur les fonctions du fichier 
+	*/
         if (result == 0){
-            afficher_fichier_PointVect(argv[i], nom_fonction, &x1, &y1, &x2, &y2, &lambda, &x_res, &y_res, &res);
+		afficher_fichier_PointVect(argv[i], nom_fonction, &x1, &y1, &x2, &y2, &lambda, &x_res, &y_res, &res);
 
-            result = test_fonction_PointVect(nom_fonction, x1, y1, x2, y2, lambda, x_res, y_res, res);
+		test_fonction_PointVect(nom_fonction, x1, y1, x2, y2, lambda, x_res, y_res, res);
         }
     }
     return 0;

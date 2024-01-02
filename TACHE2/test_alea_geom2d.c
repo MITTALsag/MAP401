@@ -4,6 +4,10 @@
 #include <math.h> 
 #include "geom2d.h"
 
+
+
+
+/*A MODIFIER EN FAISANT EN SORTE QUE LA VALEUR DE RETOUR NE SOIT PAS TROP GRANDE */
 /* renvoie un Double avec 15 chiffre apres la virgule */
 double randomDouble()
 {
