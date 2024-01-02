@@ -1,0 +1,5 @@
+vect_bipoint
+1.0 2.0 
+3.0 4.0
+2.0 2.0
+il y a un espace en trop a la ligne 2

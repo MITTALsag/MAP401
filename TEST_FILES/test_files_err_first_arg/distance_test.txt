@@ -1,0 +1,5 @@
+distance
+1.0 c
+3.0 4.0
+2.8284
+la deuxième coordonnées n'est pas un float

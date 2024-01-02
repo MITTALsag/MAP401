@@ -74,7 +74,7 @@ double norme(Vecteur V){
 
 /* renvoie la distance entre les point P1 et P2 */
 double distance(Point P1, Point P2){
-    return sqrt(pow(P1.x - P2.x, 2.) + pow(P1.y - P2.y, 2.));
+    return sqrt(pow(P2.x - P1.x, 2.) + pow(P2.y - P1.y, 2.));
 }
 
 /*--------------------------------------------------------------------------------------------------------*/

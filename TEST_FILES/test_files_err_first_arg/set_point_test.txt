@@ -1,0 +1,4 @@
+set_point
+3.5 4.2Z
+3.5 4.2
+il y un caractere en trop (Z)

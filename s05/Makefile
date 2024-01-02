@@ -37,7 +37,7 @@ INCLUDEOPTS = -I$(INCDIR)
 COMPILOPTS = -g -Wall $(INCLUDEOPTS)
 
 # liste des executables
-EXECUTABLES = test_alea_geom2d
+EXECUTABLES = test_alea_geom2d test_fichier_PointVect
 
 
 #############################################################################
@@ -76,6 +76,20 @@ test_alea_geom2d.o : test_alea_geom2d.c geom2d.h
 	@echo "Compilation du module test_alea_geom2d"
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
+
+fichier_PointVect.o : fichier_PointVect.c geom2d.h types_macros.h
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Compilation du module fichier_PointVect"
+	@echo "---------------------------------------------"
+	$(CC) -c $(COMPILOPTS) $<
+
+test_fichier_PointVect.o : test_fichier_PointVect.c geom2d.h fichier_PointVect.h 
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Compilation du module test_fichier_PointVect"
+	@echo "---------------------------------------------"
+	$(CC) -c $(COMPILOPTS) $<
 		
 ########################################################
 # regles explicites de creation des executables
@@ -86,6 +100,15 @@ test_alea_geom2d : test_alea_geom2d.o geom2d.o
 	@echo "Creation de l'executable "$@
 	@echo "---------------------------------------------"
 	$(CC) $^ $(LDOPTS) -o $@
+
+
+test_fichier_PointVect : test_fichier_PointVect.o geom2d.o fichier_PointVect.o 
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Creation de l'executable "$@
+	@echo "---------------------------------------------"
+	$(CC) $^ $(LDOPTS) -o $@
+
 
 # regle pour "nettoyer" le repertoire
 clean:

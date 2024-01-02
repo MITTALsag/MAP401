@@ -1,0 +1,5 @@
+add_vect
+1.0 2.0
+c 3.0 4.0
+4.0 6.0
+il y a un char en trop au deuxieme arg

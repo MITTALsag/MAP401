@@ -1,0 +1,5 @@
+mult_scalaire_point
+3.0 4.0
+2.0
+c6.0 8.0
+res pas au bon format

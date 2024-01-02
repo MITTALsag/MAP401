@@ -28,4 +28,11 @@ fprintf(stderr, "%s\n", _m_); \
 exit(1); \
 }
 
+//REF 16
+/* macro affichant le message _m_ et NE s'arretant PAS*/
+#define ERREUR_NON_FATALE(_m_) \
+{ \
+fprintf(stderr, "%s\n", _m_); \
+}
+
 #endif

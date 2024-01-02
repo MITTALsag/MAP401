@@ -1,0 +1,5 @@
+set_point
+3.5 4.2
+c
+3.5 4.2
+il n'y a pas de deuxièeme arg normalement

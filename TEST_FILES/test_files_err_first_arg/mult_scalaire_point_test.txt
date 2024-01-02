@@ -1,0 +1,5 @@
+mult_scalaire_point
+c 4.0
+2.0
+6.0 8.0
+la première coordonnées n'est pas un float

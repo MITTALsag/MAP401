@@ -1,0 +1,5 @@
+mult_scalaire_point
+3.0 4.0
+
+6.0 8.0
+il n'y a rien au deuxième arg alors qu'un double est attendu

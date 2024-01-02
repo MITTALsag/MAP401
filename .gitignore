@@ -1,0 +1,6 @@
+*/*.o
+s04/test_image 
+s04/test_lecture_fichier 
+s04/test_image_seul
+s05/test_alea_geom2d 
+s05/test_fichier_PointVect

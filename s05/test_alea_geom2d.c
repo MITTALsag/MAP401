@@ -10,7 +10,7 @@ double randomDouble()
     return (double)(rand()) / (double)(rand());
 }
 
-/* renvoie un double sous forme d'entier par ex : 2. = 2*/
+/* renvoie un double sous forme d'entier par ex : 2. = 2 */
 double randomInt()
 {
     return (double)(rand() % 100);

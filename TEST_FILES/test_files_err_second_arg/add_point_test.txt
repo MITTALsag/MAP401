@@ -1,0 +1,5 @@
+add_point
+1.5 2.5
+3.5
+5.0 7.0
+il manque une coordonnée au deuxième arg

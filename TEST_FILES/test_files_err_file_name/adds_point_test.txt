@@ -1,0 +1,5 @@
+adds_point
+1.5 2.5
+3.5 4.5
+5.0 7.0
+il n'y a pas de s a adds !

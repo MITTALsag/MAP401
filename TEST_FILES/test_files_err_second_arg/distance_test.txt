@@ -1,0 +1,5 @@
+distance
+1.0 2.0
+c 4
+2.8284
+premiere coord du deuxième arg n'est pas un float
