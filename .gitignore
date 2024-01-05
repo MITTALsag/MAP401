@@ -5,3 +5,8 @@ TACHE1/test_image_seul
 TACHE2/test_alea_geom2d 
 TACHE2/test_fichier_PointVect
 */*/*.swp
+*/tags
+test_struct_liste 
+test_contour 
+test_contour_a_la_volee
+
