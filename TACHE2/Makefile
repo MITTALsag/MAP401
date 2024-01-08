@@ -37,7 +37,7 @@ INCLUDEOPTS = -I$(INCDIR)
 COMPILOPTS = -g -Wall $(INCLUDEOPTS)
 
 # liste des executables
-EXECUTABLES = test_alea_geom2d test_fichier_PointVect
+EXECUTABLES = test_alea_geom2d test_fichier_PointVect test_geom2d
 
 
 #############################################################################
@@ -90,7 +90,13 @@ test_fichier_PointVect.o : test_fichier_PointVect.c geom2d.h fichier_PointVect.h
 	@echo "Compilation du module test_fichier_PointVect"
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
-		
+
+test_geom2d.o : test_geom2d.c geom2d.h 
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Compilation du module test_geom2d"
+	@echo "---------------------------------------------"
+	$(CC) -c $(COMPILOPTS) $<
 ########################################################
 # regles explicites de creation des executables
 
@@ -109,6 +115,12 @@ test_fichier_PointVect : test_fichier_PointVect.o geom2d.o fichier_PointVect.o
 	@echo "---------------------------------------------"
 	$(CC) $^ $(LDOPTS) -o $@
 
+test_geom2d : test_geom2d.o geom2d.o 
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Creation de l'executable "$@
+	@echo "---------------------------------------------"
+	$(CC) $^ $(LDOPTS) -o $@
 
 # regle pour "nettoyer" le repertoire
 clean:
