@@ -30,11 +30,11 @@ void supprimer_image(Image *p_I);
 
 /* renvoie la valeur du pixel (x,y) de l'image I
    si (x,y) est hors de l'image la fonction renvoie BLANC */
-Pixel get_pixel_image(Image I, int x, int y);
+Pixel get_pixel_image(Image I, UINT x, UINT y);
 
 /* change la valeur du pixel (x,y) de l'image I avec la valeur v
    si (x,y) est hors de l'image la fonction ne fait rien */
-void set_pixel_image(Image I, int x, int y, Pixel v);
+void set_pixel_image(Image I, UINT x, UINT y, Pixel v);
 
 /* renvoie la largeur de l'image I */
 UINT largeur_image(Image I);

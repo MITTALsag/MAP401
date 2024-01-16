@@ -2,7 +2,6 @@
 #include "geom2d.h"
 #include "fichier_PointVect.h"
 
-//REF 18
 
 int main(int argc, char* argv[]){
     int i, result;

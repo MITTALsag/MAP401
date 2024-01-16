@@ -5,7 +5,7 @@
 # utilisation des variables internes $@ $< $^ $*
 # $@ : correspond au nom de la cible
 # $< : correspond au nom de la premiere dependance
-# $^ : correspond a toutes les dependances
+# $^ : correspond à toutes les dépendances
 # $* : correspond au nom du fichier sans extension 
 #       (dans les regles generiques uniquement)
 #############################################################################
@@ -27,7 +27,7 @@ INCDIR = .
 # chemin d'acces aux librairies (binaires)
 LIBDIR = .
 
-# options pour l'edition des liens
+# options pour l'édition des liens
 LDOPTS = -L$(LIBDIR) -lm
 
 # options pour la recherche des fichiers .o et .h
@@ -37,7 +37,7 @@ INCLUDEOPTS = -I$(INCDIR)
 COMPILOPTS = -g -Wall $(INCLUDEOPTS)
 
 # liste des executables
-EXECUTABLES = test_image test_lecture_fichier test_image_seul
+EXECUTABLES = test_image test_lecture_fichier
 
 
 #############################################################################
@@ -45,7 +45,7 @@ EXECUTABLES = test_image test_lecture_fichier test_image_seul
 #############################################################################
 
 ########################################################
-# la regle par defaut
+# la règle par défaut
 all : $(EXECUTABLES)
 
 ########################################################
@@ -77,21 +77,12 @@ test_image.o : test_image.c image.h
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
 
-test_lecture_fichier.o : test_lecture_fichier.c image.h 
+test_lecture_fichier.o : test_lecture_fichier.c image.h
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module test_lecture_fichier"
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $<
-
-test_image_seul.o : test_image_seul.c image.h 
-	@echo ""
-	@echo "---------------------------------------------"
-	@echo "Compilation du module test_image_seul"
-	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
-		
-		
 ########################################################
 # regles explicites de creation des executables
 
@@ -109,14 +100,6 @@ test_lecture_fichier : test_lecture_fichier.o image.o
 	@echo "---------------------------------------------"
 	$(CC) $^ $(LDOPTS) -o $@
 
-test_image_seul : test_image_seul.o image.o 
-	@echo ""
-	@echo "---------------------------------------------"
-	@echo "Creation de l'executable "$@
-	@echo "---------------------------------------------"
-	$(CC) $^ $(LDOPTS) -o $@
-
-
-# regle pour "nettoyer" le repertoire
+# regle pour "nettoyer" le répertoire
 clean:
 	rm -fR $(EXECUTABLES) *.o 

@@ -2,7 +2,6 @@
 #include <string.h>
 #include "fichier_PointVect.h"
 
-//REF 17
 
 /***************************************/
 /* Vérification du contenue du fichier */

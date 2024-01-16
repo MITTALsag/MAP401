@@ -1,7 +1,6 @@
 #ifndef _FICHIER_POINTVECT_H_
 #define _FICHIER_POINTVECT_H_
 
-//REF 17
 
 #include "geom2d.h"
 #include "types_macros.h"

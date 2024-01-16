@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "image.h"
+#include <image.h>
 
 
 int main (int argc, char* argv[]){
@@ -7,7 +7,7 @@ int main (int argc, char* argv[]){
     Image I;
     if (argc != 2){
         printf ("USAGE : ./test_lecture_fichier <fichier.pbm>\n");
-        return 0;
+        return 1;
     }
 
     I = lire_fichier_image(argv[1]);
@@ -16,5 +16,5 @@ int main (int argc, char* argv[]){
 
     supprimer_image(&I);
 
-    return 1;
+    return 0;
 }
