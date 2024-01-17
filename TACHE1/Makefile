@@ -1,16 +1,19 @@
 #############################################################################
 # Fichier Makefile 
-# UE MAP401 - DLST - UGA - 2020/2021
+# UE MAP401 - DLST - UGA 
 #############################################################################
 # utilisation des variables internes $@ $< $^ $*
 # $@ : correspond au nom de la cible
 # $< : correspond au nom de la premiere dependance
-# $^ : correspond � toutes les d�pendances
+# $^ : correspond à toutes les dépendances
 # $* : correspond au nom du fichier sans extension 
 #       (dans les regles generiques uniquement)
 #############################################################################
 # information sur la regle executee avec la commande @echo
 # (une commande commancant par @ n'est pas affichee a l'ecran)
+#############################################################################
+# Ce fichier compile si besoin une bibliothèque statique "image" depuis SRC et
+# la met dans LIB. Puis compile les tests dans TEST
 #############################################################################
 
 
@@ -21,35 +24,61 @@
 # compilateur C
 CC = clang
 
+#Option de compilation
+CFLAGS= -g -Wall -Wextra -Werror
+
 # chemin d'acces aux librairies (interfaces)
-INCDIR = .
+INCDIR = includes
 
-# chemin d'acces aux librairies (binaires)
-LIBDIR = .
-
-# options pour l'�dition des liens
-LDOPTS = -L$(LIBDIR) -lm
+# Listes de tous les fichiers interfaces
+FILEH = $(INCDIR)/$(wildcard *.h)
 
 # options pour la recherche des fichiers .o et .h
 INCLUDEOPTS = -I$(INCDIR)
 
-# options de compilation
-COMPILOPTS = -g -Wall $(INCLUDEOPTS)
-
 # liste des executables
-EXECUTABLES = test_image test_lecture_fichier
+EXECUTABLES = TEST/test_image TEST/test_lecture_fichier
 
+# chemin d'acces aux librairies (binaires)
+LIBDIR = LIBRARY
+
+# options pour l'édition des liens
+LDOPTS = -L$(LIBDIR) -limage -L. -lm
+
+# Nom pour la creation des différentes lib
+IMAGE = LIBRARY/libimage.a
 
 #############################################################################
 # definition des regles
 #############################################################################
 
 ########################################################
-# la r�gle par d�faut
+# la règle par défaut
 all : $(EXECUTABLES)
 
+
+# Règle pour la création de la lib image
+limage : $(IMAGE)
+
+#############################################################################
+# Création de la lib "image"
+#############################################################################
+
+$(IMAGE) : binaries/image.o
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Création de librairie image"
+	@echo "---------------------------------------------"
+	$(AR) rsc $@ $^
+#	mv $(TARGET) LIBRARY/
 ########################################################
-# regle generique : 
+
+
+########################################################
+# Règle pour la création des .o
+########################################################
+
+# regle generique :
 #  remplace les regles de compilation separee de la forme
 #	module.o : module.c module.h
 #		$(CC) -c $(COMPILOPTS) module.c
@@ -63,43 +92,52 @@ all : $(EXECUTABLES)
 ########################################################
 # regles explicites de compilation separee de modules
 # n'ayant pas de fichier .h ET/OU dependant d'autres modules
-image.o : image.c image.h types_macros.h
+binaries/image.o : SRC/image.c $(FILEH)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module image"
 	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
+	$(CC) -c $(INCLUDEOPTS) $< -o $@
+#	$(MAKE) limage
 
-test_image.o : test_image.c image.h 
+binaries/test_image.o : TEST/test_image.c $(FILEH)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module test_image"
 	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
+	$(CC) -c $(CFLAGS) $(INCLUDEOPTS) $< -o $@
 
-test_lecture_fichier.o : test_lecture_fichier.c image.h
+binaries/test_lecture_fichier.o : TEST/test_lecture_fichier.c $(FILEH)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module test_lecture_fichier"
 	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
+	$(CC) -c $(CFLAGS) $(INCLUDEOPTS) $< -o $@
+
 ########################################################
 # regles explicites de creation des executables
 
-test_image : test_image.o image.o 
+TEST/test_image : binaries/test_image.o $(IMAGE)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Creation de l'executable "$@
 	@echo "---------------------------------------------"
 	$(CC) $^ $(LDOPTS) -o $@
 
-test_lecture_fichier : test_lecture_fichier.o image.o 
+TEST/test_lecture_fichier : binaries/test_lecture_fichier.o $(IMAGE)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Creation de l'executable "$@
 	@echo "---------------------------------------------"
 	$(CC) $^ $(LDOPTS) -o $@
 
-# regle pour "nettoyer" le r�pertoire
+########################################################
+# regle pour "nettoyer" le répertoire
 clean:
-	rm -fR $(EXECUTABLES) *.o 
+	rm -fR TEST/$(EXECUTABLES) binaries/*.o
+
+# full clean
+fclean : clean
+	rm -fR LIBRARY/*.a
+
+re : fclean all
