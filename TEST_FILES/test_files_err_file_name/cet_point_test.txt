@@ -1,4 +1,0 @@
-cet_point
-3.5 4.2
-3.5 4.2
-c'est un s a cet !

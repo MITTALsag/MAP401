@@ -1,5 +1,0 @@
-add_point
-1
-3.5 4.5
-5.0 7.0
-il manque une coordonées a la ligne 2

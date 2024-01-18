@@ -3,10 +3,12 @@
 **/*.swp
 **/*tags
 
-TACHE1/TEST/*
+TACHE1/TEST/test_image
+TACHE1/TEST/test_lecture_fichier
 
-TACHE2/test_alea_geom2d 
-TACHE2/test_fichier_PointVect
+TACHE2/TEST/test_alea_geom2d 
+TACHE2/TEST/test_geom2d
+
 TACHE3/test_struct_liste 
 TACHE3/test_contour 
 TACHE3/test_contour_a_la_volee

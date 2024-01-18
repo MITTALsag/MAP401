@@ -1,5 +1,0 @@
-prod_scal
-1.0 
-3.0 4.0
-11.0
-il manque une coordonées a la ligne 2

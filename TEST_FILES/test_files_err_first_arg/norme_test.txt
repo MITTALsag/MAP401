@@ -1,4 +1,0 @@
-norme
-
-5.0
-il n'y a rien dans la ligne deux alors qu'il faut un couple de coordonnées

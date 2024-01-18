@@ -1,5 +1,0 @@
-mult_scalaire_vect
-c c
-2.0
-6.0 8.0
-les deux coordonées de la ligne deux ne sont pas des float

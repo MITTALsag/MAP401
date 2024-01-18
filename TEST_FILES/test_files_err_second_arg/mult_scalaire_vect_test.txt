@@ -1,5 +1,0 @@
-mult_scalaire_vect
-3.0 4.0
-2 2
-6.0 8.0
-deuxième arg doit etre un double alors que la c'est un couple de coordonnée

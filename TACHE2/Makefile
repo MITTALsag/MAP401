@@ -1,16 +1,19 @@
 #############################################################################
 # Fichier Makefile 
-# UE MAP401 - DLST - UGA - 2020/2021
+# UE MAP401 - DLST - UGA 
 #############################################################################
 # utilisation des variables internes $@ $< $^ $*
 # $@ : correspond au nom de la cible
 # $< : correspond au nom de la premiere dependance
-# $^ : correspond a toutes les dependances
+# $^ : correspond à toutes les dépendances
 # $* : correspond au nom du fichier sans extension 
 #       (dans les regles generiques uniquement)
 #############################################################################
 # information sur la regle executee avec la commande @echo
 # (une commande commancant par @ n'est pas affichee a l'ecran)
+#############################################################################
+# Ce fichier compile si besoin une bibliothèque statique "image" depuis SRC et
+# la met dans LIB. Puis compile les tests dans TEST
 #############################################################################
 
 
@@ -21,32 +24,55 @@
 # compilateur C
 CC = clang
 
+#Option de compilation
+COMPILOPTS = -g -Wall -Wextra -Werror
+
 # chemin d'acces aux librairies (interfaces)
-INCDIR = .
+INCDIR = INCLUDES
 
-# chemin d'acces aux librairies (binaires)
-LIBDIR = .
-
-# options pour l'edition des liens
-LDOPTS = -L$(LIBDIR) -lm
+# Listes de tous les fichiers interfaces
+FILEH = $(INCDIR)/$(wildcard *.h)
 
 # options pour la recherche des fichiers .o et .h
 INCLUDEOPTS = -I$(INCDIR)
 
-# options de compilation
-COMPILOPTS = -g -Wall $(INCLUDEOPTS)
-
 # liste des executables
-EXECUTABLES = test_alea_geom2d test_fichier_PointVect test_geom2d
+EXECUTABLES = TEST/test_alea_geom2d TEST/test_geom2d 
 
+# chemin d'acces aux librairies (binaires)
+LIBDIR = LIB
+
+# options pour l'édition des liens
+LDOPTS = -L$(LIBDIR) -lgeom2d -L. -lm
+
+# Nom pour la creation des différentes lib
+GEOM2D = $(LIBDIR)/libgeom2d.a
 
 #############################################################################
 # definition des regles
 #############################################################################
 
 ########################################################
-# la regle par defaut
+# la règle par défaut
 all : $(EXECUTABLES)
+
+
+# Règle pour la création de la lib point et vecteur
+lgeom2d : $(GEOM2D)
+
+
+#############################################################################
+# Création de la lib "geom2d"
+#############################################################################
+
+$(GEOM2D) : BIN/geom2d.o
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Création de librairie geom2d"
+	@echo "---------------------------------------------"
+	$(AR) rsc $@ $^
+
+########################################################
 
 ########################################################
 # regle generique : 
@@ -58,49 +84,43 @@ all : $(EXECUTABLES)
 	@echo "---------------------------------------------"
 	@echo "Compilation du module "$*
 	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
+	$(CC) -c $(COMPILOPTS) $(INCLUDEOPTS) $<
 
 ########################################################
 # regles explicites de compilation separee de modules
 # n'ayant pas de fichier .h ET/OU dependant d'autres modules
-geom2d.o : geom2d.c geom2d.h types_macros.h
+
+BIN/geom2d.o : SRC/geom2d.c $(FILEH)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module geom2d"
 	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
+	$(CC) -c $(COMPILOPTS) $(INCLUDEOPTS) $< -o $@
 
-test_alea_geom2d.o : test_alea_geom2d.c geom2d.h 
-	@echo ""
+BIN/test_alea_geom2d.o : TEST/test_alea_geom2d.c $(FILEH)
 	@echo "---------------------------------------------"
 	@echo "Compilation du module test_alea_geom2d"
 	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
+	$(CC) -c $(COMPILOPTS) $(INCLUDEOPTS) $< -o $@
 
-fichier_PointVect.o : fichier_PointVect.c geom2d.h types_macros.h
-	@echo ""
-	@echo "---------------------------------------------"
-	@echo "Compilation du module fichier_PointVect"
-	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
-
-test_fichier_PointVect.o : test_fichier_PointVect.c geom2d.h fichier_PointVect.h 
-	@echo ""
-	@echo "---------------------------------------------"
-	@echo "Compilation du module test_fichier_PointVect"
-	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
-
-test_geom2d.o : test_geom2d.c geom2d.h 
+BIN/test_geom2d.o : TEST/test_geom2d.c $(FILEH)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Compilation du module test_geom2d"
 	@echo "---------------------------------------------"
-	$(CC) -c $(COMPILOPTS) $<
+	$(CC) -c $(COMPILOPTS) $(INCLUDEOPTS) $< -o $@
+
 ########################################################
 # regles explicites de creation des executables
 
-test_alea_geom2d : test_alea_geom2d.o geom2d.o 
+TEST/test_alea_geom2d : BIN/test_alea_geom2d.o $(GEOM2D)
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Creation de l'executable "$@
+	@echo "---------------------------------------------"
+	$(CC) $^ $(LDOPTS) -o $@
+
+TEST/test_geom2d : BIN/test_geom2d.o $(GEOM2D)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Creation de l'executable "$@
@@ -108,20 +128,18 @@ test_alea_geom2d : test_alea_geom2d.o geom2d.o
 	$(CC) $^ $(LDOPTS) -o $@
 
 
-test_fichier_PointVect : test_fichier_PointVect.o geom2d.o fichier_PointVect.o 
-	@echo ""
-	@echo "---------------------------------------------"
-	@echo "Creation de l'executable "$@
-	@echo "---------------------------------------------"
-	$(CC) $^ $(LDOPTS) -o $@
-
-test_geom2d : test_geom2d.o geom2d.o 
-	@echo ""
-	@echo "---------------------------------------------"
-	@echo "Creation de l'executable "$@
-	@echo "---------------------------------------------"
-	$(CC) $^ $(LDOPTS) -o $@
-
-# regle pour "nettoyer" le repertoire
+########################################################
+# regle pour "nettoyer" le répertoire
 clean:
-	rm -fR $(EXECUTABLES) *.o 
+	rm -fR TEST/$(EXECUTABLES) BIN/*.o
+
+# full clean
+fclean : clean
+	rm -fR LIB/*.a
+
+re : fclean all
+
+
+
+
+

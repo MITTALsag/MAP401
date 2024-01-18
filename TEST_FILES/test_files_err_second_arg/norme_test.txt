@@ -1,5 +1,0 @@
-norme
-3.0 4.0
-        d
-5.0
-il n'y a pas de deuxieme agr normalement
