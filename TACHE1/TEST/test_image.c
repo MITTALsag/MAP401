@@ -12,7 +12,7 @@ int main (int argc, char* argv[]){
 
     Image I;
     Image neg_I;
-    char nom_image[256];
+    char nom_image[256] = {'\0'};
     int len;
 
     strcpy(nom_image, argv[1]);

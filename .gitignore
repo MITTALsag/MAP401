@@ -9,7 +9,8 @@ TACHE1/TEST/test_lecture_fichier
 TACHE2/TEST/test_alea_geom2d 
 TACHE2/TEST/test_geom2d
 
-TACHE3/test_struct_liste 
-TACHE3/test_contour 
-TACHE3/test_contour_a_la_volee
+TACHE3/TEST/test_struct_liste 
+TACHE3/TEST/test_contour 
+TACHE3/TEST/test_contour_neg
+TACHE3/TEST/test_contour_a_la_volee
 
