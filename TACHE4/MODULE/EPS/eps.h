@@ -9,7 +9,7 @@
 ** (l'image est cree avec des segements)
 ** - l'image est cree avec fill ou stroke en fonction du mode passé en argument
 */
-void cree_image_eps(Contour C, UINT Largeur_Image, UINT Hauteur_Image, char* nom_fichier, char mode);
+void cree_image_eps(const Contour C, const UINT Largeur_Image, const UINT Hauteur_Image, const char* nom_fichier, const char mode);
 
 
 #endif /* _EPS_H_ */

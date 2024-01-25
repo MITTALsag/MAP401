@@ -130,39 +130,6 @@ void ecrire_contour(Liste_Point L)
 	free(TP.tab); /* supprimer le tableau de point TP */
 }
 
-
-/* Cette fonction parcours le contour et recupere les valeurs minimale et
-** maximale des points du contour.
-** Cela servira pour la création d'image eps où on pourra choisir la taille de
-** l'image en fonction de ces valeurs
-*/
-void min_max_contour(Contour C, int* xmin, int* xmax, int* ymin, int* ymax)
-{
-    if (C.taille == 0)
-        ERREUR_FATALE(RED"ERREUR min_max_contour : le contour passé en paramètre est vide.\n"RESET);
-    //initialisation de valeur impossible
-    *xmin = -1;*xmax = -1;*ymin = -1; *ymax = -1;
-
-    Cellule_Liste_Point *point_courant = C.first;
-
-    while (point_courant)
-    {
-        if (point_courant->data.x < *xmin)
-           *xmin = point_courant->data.x;
-
-        if (point_courant->data.x > *xmax)
-           *xmax = point_courant->data.x;
-
-        if (point_courant->data.y < *ymin)
-           *ymin = point_courant->data.y;
-
-        if (point_courant->data.y > *ymax)
-           *ymax = point_courant->data.y;
-
-        point_courant = point_courant->suiv;
-    }
-    
-}
 /*-------------------------------------------------------------------------------------*/
 
 

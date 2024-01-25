@@ -11,7 +11,7 @@
 ** - l'image est cree avec fill ou stroke en fonction du mode passé en argument
 ** (fais stroke par defaut et il faut passé F dans mode pour faire fill)
 */
-void cree_image_eps(Contour C, const UINT Largeur_Image, const UINT Hauteur_Image, char* nom_fichier, char mode)
+void cree_image_eps(const Contour C, const UINT Largeur_Image, const UINT Hauteur_Image, const char* nom_fichier, const char mode)
 {
     FILE* fich = fopen(nom_fichier, "w");
 
@@ -22,18 +22,20 @@ void cree_image_eps(Contour C, const UINT Largeur_Image, const UINT Hauteur_Imag
     Cellule_Liste_Point *point_courant = C.first;
 
     fprintf(fich, "%%!PS-Adobe-3.0 EPSF-3.0\n");
-    fprintf(fich, "%\%BoundingBox: 0 0 %d %d\n", Largeur_Image, Hauteur_Image);
+    fprintf(fich, "%%%%BoundingBox: 0 0 %d %d\n", Largeur_Image, Hauteur_Image);
  
     //fprintf("%% Contour de l'image %s\n", nom_fichier);
 
-    fprintf(fich, "%d %d moveto\n", (int)point_courant->data.x, (int)point_courant->data.y);
+    fprintf(fich, "%d %d moveto\n", (int)point_courant->data.x, Hauteur_Image - (int)point_courant->data.y);
 
     point_courant = point_courant->suiv;
     while (point_courant)
     {
-        fprintf(fich, "%d %d lineto\n", (int)point_courant->data.x, (int)point_courant->data.y);
+        fprintf(fich, "%d %d lineto\n", (int)point_courant->data.x, Hauteur_Image - (int)point_courant->data.y);
         point_courant = point_courant->suiv;
     }
+    fprintf(fich, "%% largeur du tracé\n");
+    fprintf(fich, "0 setlinewidth\n");
 
     fprintf(fich, "%% Instruction de tracé\n");
     if (mode == 'F')
@@ -43,5 +45,6 @@ void cree_image_eps(Contour C, const UINT Largeur_Image, const UINT Hauteur_Imag
 
     fprintf(fich, "showpage\n");
 
+    fclose(fich);
 
 }

@@ -81,12 +81,6 @@ Liste_Point supprimer_premier_element_liste_Point(Liste_Point L);
 void ecrire_contour(Liste_Point L);
 
 
-/* Cette fonction parcours le contour et recupere les valeurs minimale et
-** maximale des points du contour.
-** Cela servira pour la création d'image eps où on pourra choisir la taille de
-** l'image en fonction de ces valeurs
-*/
-void min_max_contour(Contour C, int* xmin, int* xmax, int* ymin, int* ymax);
 /*-------------------------------------------------------------------------------------*/
 
 

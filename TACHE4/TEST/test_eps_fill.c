@@ -32,11 +32,11 @@ int main(int argc, char* argv[])
     //transformation de <nom_fichier>.pbm en <nom_fichier>.eps
     nom_fichier[0] = '\0'; //on initialise nom_fichier a la liste vide
     strcat(nom_fichier, argv[1]);
-    nom_fichier[strlen(nom_fichier) - 3] = '\0';
-    strcat(nom_fichier, "eps");
+    nom_fichier[strlen(nom_fichier) - 4] = '\0';
+    strcat(nom_fichier, "_fill.eps");
 
     //ecriture dans le fichier du contour
-    cree_image_eps(C, largeur_image(I), hauteur_image(I), nom_fichier, 'S');
+    cree_image_eps(C, largeur_image(I), hauteur_image(I), nom_fichier, 'F');
 
     return 0; 
 }

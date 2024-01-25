@@ -14,3 +14,5 @@ TACHE3/TEST/test_contour
 TACHE3/TEST/test_contour_neg
 TACHE3/TEST/test_contour_a_la_volee
 
+TACHE4/TEST/test_eps_stroke
+TACHE4/TEST/test_eps_fill

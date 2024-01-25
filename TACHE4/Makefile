@@ -37,7 +37,7 @@ FILEH = $(INCDIR)/$(wildcard *.h)
 INCLUDEOPTS = -I$(INCDIR)
 
 # liste des executables
-EXECUTABLES = TEST/test_eps
+EXECUTABLES = TEST/test_eps_stroke TEST/test_eps_fill
 
 # chemin d'acces aux librairies (binaires)
 LIBDIR = LIB
@@ -190,27 +190,39 @@ MODULE/EPS/eps.o : MODULE/EPS/eps.c INCLUDES/eps.h INCLUDES/geom2d.h INCLUDES/ty
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $(INCLUDEOPTS) $< -o $@
 
-BIN/test_eps.o : TEST/test_eps.c INCLUDES/eps.h INCLUDES/struct_liste.h INCLUDES/types_macros.h INCLUDES/geom2d.h
+BIN/test_eps_stroke.o : TEST/test_eps_stroke.c INCLUDES/eps.h INCLUDES/struct_liste.h INCLUDES/types_macros.h INCLUDES/geom2d.h
 	@echo ""
 	@echo "---------------------------------------------"
-	@echo "Compilation du module test_eps"
+	@echo "Compilation du module test_eps_stroke"
 	@echo "---------------------------------------------"
 	$(CC) -c $(COMPILOPTS) $(INCLUDEOPTS) $< -o $@
 
+BIN/test_eps_fill.o : TEST/test_eps_fill.c INCLUDES/eps.h INCLUDES/struct_liste.h INCLUDES/types_macros.h INCLUDES/geom2d.h
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Compilation du module test_eps_fill"
+	@echo "---------------------------------------------"
+	$(CC) -c $(COMPILOPTS) $(INCLUDEOPTS) $< -o $@
 ########################################################
 # regles explicites de creation des executables
 
-TEST/test_eps : BIN/test_eps.o $(STRUCT_LISTE) $(IMAGE) $(CONTOUR) $(EPS) $(GEOM2D)
+TEST/test_eps_stroke : BIN/test_eps_stroke.o $(STRUCT_LISTE) $(IMAGE) $(CONTOUR) $(EPS) $(GEOM2D)
 	@echo ""
 	@echo "---------------------------------------------"
 	@echo "Creation de l'executable "$@
 	@echo "---------------------------------------------"
 	$(CC) $^ $(LDOPTS) -L$(LIBDIR) -lstruct_liste -L$(LIBDIR) -limage -L$(LIBDIR) -lcontour -L$(LIBDIR) -leps -L$(LIBDIR) -lgeom2d -o $@
 
+TEST/test_eps_fill : BIN/test_eps_fill.o $(STRUCT_LISTE) $(IMAGE) $(CONTOUR) $(EPS) $(GEOM2D)
+	@echo ""
+	@echo "---------------------------------------------"
+	@echo "Creation de l'executable "$@
+	@echo "---------------------------------------------"
+	$(CC) $^ $(LDOPTS) -L$(LIBDIR) -lstruct_liste -L$(LIBDIR) -limage -L$(LIBDIR) -lcontour -L$(LIBDIR) -leps -L$(LIBDIR) -lgeom2d -o $@
 ########################################################
 # regle pour "nettoyer" le répertoire
 clean:
-	rm -fR TEST/$(EXECUTABLES) BIN/*.o
+	rm -fR TEST/$(EXECUTABLES) BIN/*.o MODULE/*/*.o
 
 # full clean
 fclean : clean
