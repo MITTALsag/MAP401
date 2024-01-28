@@ -221,7 +221,7 @@ void calcul_contour_a_la_vole(Image I)
 
     while (boucle)
     {
-        printf(" (%5.1f,%5.1f)", pos_courante.x, pos_courante.y);
+        printf("(%.1f,%.1f)", pos_courante.x, pos_courante.y);
         R.pt = avancer_robot(R);
         pos_courante.x = R.pt.x; pos_courante.y = R.pt.y;
         R.o = calcul_orient(I, R);
@@ -229,7 +229,7 @@ void calcul_contour_a_la_vole(Image I)
         if (pos_courante.x == pos_point.x && pos_courante.y == pos_point.y && R.o == EST)
             boucle = false;
     }
-    printf(" (%5.1f,%5.1f)", pos_courante.x, pos_courante.y);
+    printf("(%.1f,%.1f)\n", pos_courante.x, pos_courante.y);
 }
 
 

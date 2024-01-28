@@ -1,0 +1,57 @@
+(Les dimension de l'image sont largeur x hauteur)
+
+
+
+calcul de l'image IMAGE_TEST/chat.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 250x140
+Il y a 880 segment dans le fichier IMAGE_TEST/chat.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/coq.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 700x720
+Il y a 5386 segment dans le fichier IMAGE_TEST/coq.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/elephant.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 800x700
+Il y a 5344 segment dans le fichier IMAGE_TEST/elephant.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/gymnaste.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1056x1647
+Il y a 8784 segment dans le fichier IMAGE_TEST/gymnaste.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/image_ex_poly.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 4x4
+Il y a 18 segment dans le fichier IMAGE_TEST/image_ex_poly.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/labyrinthe.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 221x201
+Il y a 44000 segment dans le fichier IMAGE_TEST/labyrinthe.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/lettreZ.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 600x1029
+Il y a 9396 segment dans le fichier IMAGE_TEST/lettreZ.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/map401.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 830x300
+Il y a 8072 segment dans le fichier IMAGE_TEST/map401.pbm
+----------------------------------------------------------------------------
+
+calcul de l'image IMAGE_TEST/tete.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1252x1252
+Il y a 8136 segment dans le fichier IMAGE_TEST/tete.pbm
+----------------------------------------------------------------------------

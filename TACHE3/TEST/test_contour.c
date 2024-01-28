@@ -62,6 +62,7 @@ int main(int argc, char* argv[])
 
     //afichage du nombre de segment 
     printf("----------------------------------------------------------------------------\n");
+    printf(YEL"Les dimension de cette images sont : %dx%d\n"RESET, largeur_image(I), hauteur_image(I));
     printf(CYN"Il y a %d segment dans le fichier %s\n"RESET, C.taille -1, argv[1]);
     printf("----------------------------------------------------------------------------\n");
 
