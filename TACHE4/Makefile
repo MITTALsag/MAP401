@@ -222,7 +222,7 @@ TEST/test_eps_fill : BIN/test_eps_fill.o $(STRUCT_LISTE) $(IMAGE) $(CONTOUR) $(E
 ########################################################
 # regle pour "nettoyer" le répertoire
 clean:
-	rm -fR TEST/$(EXECUTABLES) BIN/*.o MODULE/*/*.o
+	rm -fR $(EXECUTABLES) BIN/*.o MODULE/*/*.o
 
 # full clean
 fclean : clean

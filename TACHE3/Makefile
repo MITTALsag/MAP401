@@ -229,7 +229,7 @@ TEST/test_contour_a_la_volee : BIN/test_contour_a_la_volee.o $(STRUCT_LISTE) $(G
 ########################################################
 # regle pour "nettoyer" le répertoire
 clean:
-	rm -fR TEST/$(EXECUTABLES) BIN/*.o
+	rm -fR $(EXECUTABLES) BIN/*.o
 
 # full clean
 fclean : clean

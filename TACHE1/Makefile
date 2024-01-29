@@ -134,7 +134,7 @@ TEST/test_lecture_fichier : binaries/test_lecture_fichier.o $(IMAGE)
 ########################################################
 # regle pour "nettoyer" le répertoire
 clean:
-	rm -fR TEST/$(EXECUTABLES) binaries/*.o
+	rm -fR $(EXECUTABLES) binaries/*.o
 
 # full clean
 fclean : clean

@@ -131,7 +131,7 @@ TEST/test_geom2d : BIN/test_geom2d.o $(GEOM2D)
 ########################################################
 # regle pour "nettoyer" le répertoire
 clean:
-	rm -fR TEST/$(EXECUTABLES) BIN/*.o
+	rm -fR $(EXECUTABLES) BIN/*.o
 
 # full clean
 fclean : clean
