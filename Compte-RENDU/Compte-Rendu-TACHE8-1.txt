@@ -1,0 +1,110 @@
+****************************************************************************
+calcul de l'image IMAGES_TEST/courbe_hilbert_7.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 255x255
+Il y a 1 contour et un total de 65536 segments dans le fichier IMAGES_TEST/courbe_hilbert_7.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 26216 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m0.100s
+
+****************************************************************************
+
+
+****************************************************************************
+calcul de l'image IMAGES_TEST/courbe_hilbert_8.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 511x511
+Il y a 1 contour et un total de 262144 segments dans le fichier IMAGES_TEST/courbe_hilbert_8.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 104860 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m0.421s
+
+****************************************************************************
+
+
+****************************************************************************
+calcul de l'image IMAGES_TEST/courbe_hilbert_9.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1023x1023
+Il y a 1 contour et un total de 1048576 segments dans le fichier IMAGES_TEST/courbe_hilbert_9.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 419432 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m1.769s
+
+****************************************************************************
+
+
+****************************************************************************
+calcul de l'image IMAGES_TEST/courbe_hilbert_10.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 2047x2047
+Il y a 1 contour et un total de 4194304 segments dans le fichier IMAGES_TEST/courbe_hilbert_10.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 1677724 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m7.458s
+
+****************************************************************************
+
+
+****************************************************************************
+calcul de l'image IMAGES_TEST/zebres-1000x0750.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1000x750
+Il y a 422 contour et un total de 56836 segments dans le fichier IMAGES_TEST/zebres-1000x0750.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 33156 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m0.157s
+
+****************************************************************************
+
+
+****************************************************************************
+calcul de l'image IMAGES_TEST/zebres-2000x1500.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 2000x1500
+Il y a 494 contour et un total de 115426 segments dans le fichier IMAGES_TEST/zebres-2000x1500.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 65802 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m0.459s
+
+****************************************************************************
+
+
+****************************************************************************
+calcul de l'image IMAGES_TEST/zebres-3000x2250.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 3000x2250
+Il y a 490 contour et un total de 173584 segments dans le fichier IMAGES_TEST/zebres-3000x2250.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 98201 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m0.901s
+
+****************************************************************************
+
+
+****************************************************************************
+calcul de l'image IMAGES_TEST/zebres-4000x3000.pbm
+Pour distance seuil d = 0
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 4000x3000
+Il y a 464 contour et un total de 231484 segments dans le fichier IMAGES_TEST/zebres-4000x3000.contour.txt
+----------------------------------------------------------------------------
+Le contour simplifié contient 130761 segements
+
+Le temps d'éxécution pour cette image est de : user = 0m1.499s
+
+****************************************************************************

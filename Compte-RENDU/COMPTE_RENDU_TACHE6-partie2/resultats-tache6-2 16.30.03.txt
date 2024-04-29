@@ -1,0 +1,89 @@
+********************************************************************************************************************************
+calcul de l'image COMPTE_RENDU/TMP/JoaquimHock-LesArbres.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1500x2100
+Il y a 543 contour et un total de 231284 segments dans le fichier COMPTE_RENDU/TMP/JoaquimHock-LesArbres.contour.txt
+----------------------------------------------------------------------------
+
+Pour distance seuil d = 1
+Le contour simplifié contient 26484 segements
+
+Pour distance seuil d = 2
+Le contour simplifié contient 13087 segements
+********************************************************************************************************************************
+
+
+********************************************************************************************************************************
+calcul de l'image COMPTE_RENDU/TMP/cheval.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 2000x1500
+Il y a 59 contour et un total de 32002 segments dans le fichier COMPTE_RENDU/TMP/cheval.contour.txt
+----------------------------------------------------------------------------
+
+Pour distance seuil d = 1
+Le contour simplifié contient 3147 segements
+
+Pour distance seuil d = 2
+Le contour simplifié contient 1381 segements
+********************************************************************************************************************************
+
+
+********************************************************************************************************************************
+calcul de l'image COMPTE_RENDU/TMP/elephant-gotlib.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1350x2000
+Il y a 313 contour et un total de 115564 segments dans le fichier COMPTE_RENDU/TMP/elephant-gotlib.contour.txt
+----------------------------------------------------------------------------
+
+Pour distance seuil d = 1
+Le contour simplifié contient 13150 segements
+
+Pour distance seuil d = 2
+Le contour simplifié contient 4280 segements
+********************************************************************************************************************************
+
+
+********************************************************************************************************************************
+calcul de l'image COMPTE_RENDU/TMP/goudyini-A.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1000x1000
+Il y a 258 contour et un total de 73444 segments dans le fichier COMPTE_RENDU/TMP/goudyini-A.contour.txt
+----------------------------------------------------------------------------
+
+Pour distance seuil d = 1
+Le contour simplifié contient 5290 segements
+
+Pour distance seuil d = 2
+Le contour simplifié contient 2713 segements
+********************************************************************************************************************************
+
+
+********************************************************************************************************************************
+calcul de l'image COMPTE_RENDU/TMP/image_poly_tache6.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 50x50
+Il y a 3 contour et un total de 488 segments dans le fichier COMPTE_RENDU/TMP/image_poly_tache6.contour.txt
+----------------------------------------------------------------------------
+
+Pour distance seuil d = 1
+Le contour simplifié contient 67 segements
+
+Pour distance seuil d = 2
+Le contour simplifié contient 43 segements
+********************************************************************************************************************************
+
+
+********************************************************************************************************************************
+calcul de l'image COMPTE_RENDU/TMP/papillon2.pbm
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 1122x417
+Il y a 140 contour et un total de 18212 segments dans le fichier COMPTE_RENDU/TMP/papillon2.contour.txt
+----------------------------------------------------------------------------
+
+Pour distance seuil d = 1
+Le contour simplifié contient 1908 segements
+
+Pour distance seuil d = 2
+Le contour simplifié contient 1035 segements
+********************************************************************************************************************************
+

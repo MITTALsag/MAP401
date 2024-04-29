@@ -1,0 +1,353 @@
+                                                                                         **********************************
+                                                                                         * calcul de l'image Asterix3.pbm *
+                                                                                         **********************************
+
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 500x500
+Il y a 32 contour et un total de 12926 segments dans le fichier Asterix3.contour.txt
+----------------------------------------------------------------------------
+
+
+**************************
+* Simplification segment *
+**************************
+
+
+Pour distance seuil d = 0
+Le contour simplifié contient 7698 segements
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 6182 segements
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 1289 segements
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 635 segements
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 394 segements
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 266 segements
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 151 segements
+
+
+***************************************************************************************************************************************
+
+***************************
+* Simplification bezier 2 *
+***************************
+
+Pour distance seuil d = 0
+Le contour simplifié contient 8343 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 4968 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 966 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 371 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 253 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 183 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 119 courbe de bezier de degres 2
+
+
+
+***************************************************************************************************************************************
+
+***************************
+* Simplification bezier 3 *
+***************************
+
+Pour distance seuil d = 0
+Le contour simplifié contient 7260 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 3470 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 648 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 298 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 210 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 155 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 85 courbe de bezier de degres 3
+
+
+*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+
+                                                                                         *************************************
+                                                                                         * calcul de l'image ColombeDeLaPaix *
+                                                                                         *************************************
+
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 500x500
+Il y a 106 contour et un total de 21764 segments dans le fichier ColombesDeLaPaix.contour.txt
+----------------------------------------------------------------------------
+
+**************************
+* Simplification segment *
+**************************
+
+
+Pour distance seuil d = 0
+Le contour simplifié contient 13338 segements
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 10482 segements
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 2427 segements
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 1131 segements
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 769 segements
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 497 segements
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 323 segements
+
+
+
+***************************************************************************************************************************************
+
+***************************
+* Simplification bezier 2 *
+***************************
+
+Pour distance seuil d = 0
+Le contour simplifié contient 13989 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 8440 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 1599 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 717 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 505 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 332 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 229 courbe de bezier de degres 2
+
+
+
+***************************************************************************************************************************************
+
+***************************
+* Simplification bezier 3 *
+***************************
+
+Pour distance seuil d = 0
+Le contour simplifié contient 12438 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 5957 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 1155 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 563 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 385 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 259 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 180 courbe de bezier de degres 3
+
+
+*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
+
+
+                                                                                         **************************************
+                                                                                         * calcul de l'image lettre-L-cursive *
+                                                                                         **************************************
+
+----------------------------------------------------------------------------
+Les dimension de cette images sont : 500x500
+Il y a 3 contour et un total de 4228 segments dans le fichier IMAGES_TEST/lettre-L-cursive.contour.txt
+----------------------------------------------------------------------------
+
+
+**************************
+* Simplification segment *
+**************************
+
+
+Pour distance seuil d = 0
+Le contour simplifié contient 2380 segements
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 1916 segements
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 271 segements
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 103 segements
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 74 segements
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 51 segements
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 36 segements
+
+
+
+***************************************************************************************************************************************
+
+***************************
+* Simplification bezier 2 *
+***************************
+
+Pour distance seuil d = 0
+Le contour simplifié contient 2777 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 1717 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 255 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 46 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 34 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 29 courbe de bezier de degres 2
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 21 courbe de bezier de degres 2
+
+
+
+***************************************************************************************************************************************
+
+***************************
+* Simplification bezier 3 *
+***************************
+
+Pour distance seuil d = 0
+Le contour simplifié contient 2359 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 0.5
+Le contour simplifié contient 1215 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 1
+Le contour simplifié contient 157 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 2
+Le contour simplifié contient 40 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 4
+Le contour simplifié contient 28 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 8
+Le contour simplifié contient 25 courbe de bezier de degres 3
+
+
+Pour distance seuil d = 16
+Le contour simplifié contient 16 courbe de bezier de degres 3
+
+
+
+
+
+
+
+Commentaire : Il semble que le nombre d'element suit une lois logarithmique car l'écart entre le nombre d'element diminue au fur et a mesure que d augmente.
+
+Pour d petit il n'y a pas trop de différence entre la simplification par segment et les deux autre mais lorsque d est grang il y a plus de segments que de courbes.
+
+Aussi le nombre de courbes de degres 3 est inferieur aux courbes de degres 2 pour d petit mais equivalent quans d est grand.
