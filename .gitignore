@@ -3,7 +3,7 @@
 **/*.swp
 **/*tags
 
-IMAGES_TEST_*
+IMAGES_TESTS_*
 **/IMAGE_TEST
 **/IMAGE_TEST_*
 
